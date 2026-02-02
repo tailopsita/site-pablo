@@ -49,17 +49,16 @@
         .logo-top { height: 50px; width: auto; }
         .brand-name { font-family: 'Merriweather', serif; font-weight: 700; color: var(--primary-color); font-size: 1.1rem; }
 
-        /* --- Hero Section --- */
+        /* --- Hero Section (Banner) --- */
         .hero { 
             text-align: center; 
-            /* AJUSTE IMPORTANTE: Aumentei o topo para 380px para o botão não cobrir o texto da imagem */
-            padding: 380px 20px 80px; 
-            background-color: var(--primary-color);
-            background-image: linear-gradient(rgba(42, 75, 90, 0.1), rgba(42, 75, 90, 0.1)), url('img/banner-vintage.png');
+            /* AJUSTE: Aumentado para 480px para descer mais o botão */
+            padding: 480px 20px 80px; 
+            background-color: var(--bg-color); /* Cor de fundo ajustada para combinar */
+            background-image: url('img/banner-vintage.png');
             background-position: center top;
             background-repeat: no-repeat;
             background-size: cover;
-            color: white;
             position: relative;
         }
 
@@ -103,9 +102,21 @@
         }
         .service-card:hover { transform: translateY(-5px); }
 
-        footer { background: #1A2E38; color: #F9F6F0; padding: 60px 20px; text-align: center; }
-        .footer-logo { height: 80px; width: auto; margin-bottom: 20px; }
-        .footer-links a { color: var(--accent-color); margin: 0 10px; text-decoration: none; font-weight: 600; }
+        /* --- Novo Rodapé --- */
+        footer { 
+            background: transparent;
+            padding: 0; 
+            text-align: center;
+            margin-top: 60px;
+        }
+        /* Classe para a imagem do rodapé ficar como uma "linha" */
+        .footer-banner {
+            width: 100%;
+            max-width: 1200px; /* Limita a largura em telas muito grandes */
+            margin: 0 auto;
+            height: auto;
+            display: block;
+        }
     </style>
 </head>
 <body>
@@ -163,17 +174,7 @@
     </div>
 
     <footer>
-        <img src="img/logo-cabecalho.png" alt="Logo Rodapé" class="footer-logo">
-        <div style="margin-bottom: 30px;">
-            <p style="font-size: 1.1rem; font-weight: 700; margin-bottom: 5px;">Dr. Pablo Fernandez</p>
-             <p>Psiquiatria Clínica</p>
-            <p>Psiquiatria da Infância e Adolescência</p>
-        </div>
-        <div class="footer-links">
-            <a href="https://www.instagram.com/pablofernandez.psiq/" target="_blank">Instagram</a>
-            <a href="https://wa.me/555189959436" target="_blank">WhatsApp</a>
-        </div>
-        <p style="margin-top: 40px; font-size: 0.85rem; opacity: 0.6;">&copy; 2026 Dr. Pablo Fernandez. Todos os direitos reservados.</p>
+        <img src="img/rodape.png" alt="Rodapé Dr. Pablo Fernandez" class="footer-banner">
     </footer>
 
 </body>
