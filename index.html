@@ -52,19 +52,16 @@
         /* --- Hero Section --- */
         .hero { 
             text-align: center; 
-            padding: 140px 20px 100px; 
+            /* AJUSTE IMPORTANTE: Aumentei o topo para 380px para o botão não cobrir o texto da imagem */
+            padding: 380px 20px 80px; 
             background-color: var(--primary-color);
-            /* IMAGEM DO BANNER: Busca o arquivo .png dentro da pasta img */
-            background-image: linear-gradient(rgba(42, 75, 90, 0.5), rgba(42, 75, 90, 0.5)), url('img/banner-vintage.png');
-            background-position: center bottom;
+            background-image: linear-gradient(rgba(42, 75, 90, 0.1), rgba(42, 75, 90, 0.1)), url('img/banner-vintage.png');
+            background-position: center top;
             background-repeat: no-repeat;
             background-size: cover;
             color: white;
             position: relative;
         }
-
-        .hero h1 { color: #FDFBF7; font-size: 2.5rem; margin-bottom: 20px; text-shadow: 0 2px 10px rgba(0,0,0,0.3); }
-        .hero p { font-size: 1.2rem; font-weight: 500; margin-bottom: 40px; color: #f0eada; }
 
         /* --- Botão --- */
         .btn { 
@@ -77,6 +74,7 @@
             display: inline-block;
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(217, 165, 91, 0.4);
+            font-size: 1.1rem;
         }
         .btn:hover { background-color: var(--white); transform: translateY(-2px); }
 
@@ -122,8 +120,6 @@
 
     <section class="hero">
         <div style="max-width: 800px; margin: 0 auto;">
-            <h1>Cuidado Especializado,<br>Futuro Brilhante</h1>
-            <p>Psiquiatria da Infância e Adolescência focada no desenvolvimento saudável e acolhimento familiar.</p>
             <a href="https://wa.me/555189959436" class="btn" target="_blank">Agendar Consulta Online</a>
         </div>
     </section>
