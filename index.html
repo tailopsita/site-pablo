@@ -56,13 +56,13 @@
         /* --- Hero Section --- */
         .hero { 
             text-align: center; 
-            /* AJUSTE: Aumentado para 520px para descer bem o botão e livrar o texto da imagem */
+            /* Mantendo 520px para o botão ficar bem posicionado abaixo do texto da imagem */
             padding: 520px 20px 80px; 
             background-color: var(--bg-color);
             background-image: url('img/banner-vintage.png');
             background-position: center top;
             background-repeat: no-repeat;
-            background-size: cover; /* Garante que a imagem cubra tudo */
+            background-size: cover; 
             position: relative;
         }
 
@@ -106,9 +106,9 @@
         }
         .service-card:hover { transform: translateY(-5px); }
 
-        /* --- Novo Rodapé Estruturado --- */
+        /* --- Rodapé Estruturado --- */
         footer { 
-            background: #F2EFE9; /* Tom levemente mais escuro que o fundo para separar */
+            background: #F2EFE9; 
             padding: 60px 20px; 
             border-top: 1px solid var(--border-color);
             margin-top: auto;
@@ -120,15 +120,15 @@
             display: grid;
             grid-template-columns: 1fr;
             gap: 40px;
+            align-items: center; /* Centraliza verticalmente o conteúdo das colunas */
         }
 
-        /* Layout de 3 colunas para telas maiores (Desktop) */
+        /* Layout de 3 colunas para telas maiores */
         @media(min-width: 768px) {
             .footer-container {
                 grid-template-columns: 1fr 1fr 1fr;
-                gap: 20px;
+                gap: 40px;
             }
-            /* Linhas divisórias entre colunas no desktop */
             .footer-col:not(:last-child) {
                 border-right: 1px solid var(--border-color);
                 padding-right: 20px;
@@ -141,22 +141,24 @@
             gap: 15px;
         }
 
+        /* Estilo específico para a imagem da esquerda */
+        .footer-brand-img {
+            width: 100%;
+            max-width: 280px; /* Limita o tamanho para não ficar gigante */
+            height: auto;
+            display: block;
+            margin: 0 auto 0 0; /* Alinha à esquerda */
+        }
+        /* Centraliza a imagem no mobile */
+        @media(max-width: 767px) {
+            .footer-brand-img { margin: 0 auto; }
+            .footer-col { text-align: center; align-items: center; }
+        }
+
         .footer-col h3 {
             font-size: 1.1rem;
             margin-bottom: 5px;
             color: var(--primary-color);
-        }
-
-        .footer-logo-box {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 10px;
-        }
-
-        .footer-logo-img {
-            width: 50px;
-            height: auto;
         }
 
         .footer-text {
@@ -164,7 +166,6 @@
             color: #555;
         }
         
-        /* Links de Contato */
         .contact-link {
             display: flex;
             align-items: center;
@@ -251,20 +252,7 @@
         <div class="footer-container">
             
             <div class="footer-col">
-                <div class="footer-logo-box">
-                    <img src="img/logo-cabecalho.png" alt="Logo Pequeno" class="footer-logo-img">
-                    <div>
-                        <h4 style="margin:0; font-size:1rem;">Dr. Pablo Fernandez</h4>
-                        <span style="font-size:0.8rem; color: #777;">Psiquiatra</span>
-                    </div>
-                </div>
-                <p class="footer-text">
-                    CREMERS 47214 <br> 
-                    RQE 45908
-                </p>
-                <p class="footer-text" style="margin-top: 10px; font-style: italic;">
-                    "Cuidado especializado, futuro brilhante."
-                </p>
+                <img src="img/rodape.png" alt="Dr. Pablo Fernandez - Identidade Visual" class="footer-brand-img">
             </div>
 
             <div class="footer-col">
