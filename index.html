@@ -20,6 +20,9 @@
             --border-color: #E0D8C3;
         }
 
+        /* Rolagem suave para navegação */
+        html { scroll-behavior: smooth; }
+
         * { box-sizing: border-box; margin: 0; padding: 0; }
         
         body { 
@@ -38,7 +41,7 @@
 
         /* --- Header --- */
         header { 
-            padding: 15px 5%; 
+            padding: 10px 5%; 
             display: flex; 
             justify-content: space-between; 
             align-items: center; 
@@ -49,14 +52,43 @@
             box-shadow: 0 4px 20px rgba(0,0,0,0.05);
         }
         
-        .header-brand { display: flex; align-items: center; text-decoration: none; gap: 15px; }
-        .logo-top { height: 50px; width: auto; }
-        .brand-name { font-family: 'Merriweather', serif; font-weight: 700; color: var(--primary-color); font-size: 1.1rem; }
+        .header-brand { display: flex; align-items: center; text-decoration: none; gap: 10px; }
+        .logo-top { height: 45px; width: auto; }
+        .brand-name { font-family: 'Merriweather', serif; font-weight: 700; color: var(--primary-color); font-size: 1rem; }
+
+        /* Menu de Navegação */
+        .nav-menu { display: none; gap: 20px; }
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+            position: relative;
+        }
+        .nav-menu a:hover { color: var(--accent-color); }
+        
+        /* Mostra o menu apenas em telas maiores */
+        @media(min-width: 900px) {
+            .nav-menu { display: flex; }
+        }
+
+        /* Botão Agendar (ajustado para mobile) */
+        .header-btn {
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            padding: 8px 20px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+        }
+        .header-btn:hover { background-color: var(--bg-color); transform: translateY(-2px); }
 
         /* --- Hero Section --- */
         .hero { 
             text-align: center; 
-            /* Mantendo 520px para o botão ficar bem posicionado abaixo do texto da imagem */
             padding: 520px 20px 80px; 
             background-color: var(--bg-color);
             background-image: url('img/banner-vintage.png');
@@ -66,8 +98,7 @@
             position: relative;
         }
 
-        /* --- Botão --- */
-        .btn { 
+        .hero-btn { 
             background-color: var(--accent-color); 
             color: var(--primary-color); 
             padding: 16px 32px; 
@@ -79,12 +110,12 @@
             box-shadow: 0 4px 15px rgba(217, 165, 91, 0.4);
             font-size: 1.1rem;
         }
-        .btn:hover { background-color: var(--white); transform: translateY(-2px); }
+        .hero-btn:hover { background-color: var(--white); transform: translateY(-2px); }
 
         .container { max-width: 1200px; margin: 0 auto; padding: 80px 20px; }
 
         /* --- Sobre --- */
-        .about-section { display: grid; grid-template-columns: 1fr; gap: 40px; align-items: center; }
+        .about-section { display: grid; grid-template-columns: 1fr; gap: 40px; align-items: center; scroll-margin-top: 120px; }
         @media(min-width: 768px) { .about-section { grid-template-columns: 400px 1fr; gap: 80px; } }
 
         .profile-img { 
@@ -94,24 +125,58 @@
             box-shadow: 15px 15px 0px var(--accent-color);
         }
 
-        /* --- Serviços --- */
-        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 60px; }
+        /* --- Áreas de Atuação --- */
+        .services-section { margin-top: 100px; scroll-margin-top: 100px; }
+        .services-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 30px; 
+            margin-top: 40px; 
+        }
         .service-card { 
             background: var(--white); 
-            padding: 40px; 
+            padding: 35px; 
             border-radius: 16px; 
             border-top: 5px solid var(--secondary-accent);
             box-shadow: 0 10px 30px rgba(0,0,0,0.05);
             transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
         }
         .service-card:hover { transform: translateY(-5px); }
+        .service-card h3 { font-size: 1.3rem; margin-bottom: 15px; }
+        
+        /* Aviso abaixo dos cards */
+        .services-disclaimer {
+            text-align: center;
+            margin-top: 40px;
+            font-style: italic;
+            color: #666;
+            font-size: 0.95rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* --- FAQ (Perguntas Frequentes) --- */
+        .faq-section { margin-top: 100px; scroll-margin-top: 100px; }
+        .faq-grid { display: grid; grid-template-columns: 1fr; gap: 20px; max-width: 900px; margin: 0 auto; }
+        .faq-item {
+            background: var(--white);
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 4px solid var(--accent-color);
+        }
+        .faq-question { font-weight: 700; color: var(--primary-color); margin-bottom: 10px; display: block; }
 
         /* --- Rodapé Estruturado --- */
         footer { 
             background: #F2EFE9; 
             padding: 60px 20px; 
             border-top: 1px solid var(--border-color);
-            margin-top: auto;
+            margin-top: 100px;
+            scroll-margin-top: 100px;
         }
 
         .footer-container {
@@ -120,10 +185,9 @@
             display: grid;
             grid-template-columns: 1fr;
             gap: 40px;
-            align-items: center; /* Centraliza verticalmente o conteúdo das colunas */
+            align-items: center; 
         }
 
-        /* Layout de 3 colunas para telas maiores */
         @media(min-width: 768px) {
             .footer-container {
                 grid-template-columns: 1fr 1fr 1fr;
@@ -135,36 +199,22 @@
             }
         }
 
-        .footer-col {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
+        .footer-col { display: flex; flex-direction: column; gap: 15px; }
 
-        /* Estilo específico para a imagem da esquerda */
         .footer-brand-img {
             width: 100%;
-            max-width: 280px; /* Limita o tamanho para não ficar gigante */
+            max-width: 280px;
             height: auto;
             display: block;
-            margin: 0 auto 0 0; /* Alinha à esquerda */
+            margin: 0 auto 0 0;
         }
-        /* Centraliza a imagem no mobile */
         @media(max-width: 767px) {
             .footer-brand-img { margin: 0 auto; }
             .footer-col { text-align: center; align-items: center; }
         }
 
-        .footer-col h3 {
-            font-size: 1.1rem;
-            margin-bottom: 5px;
-            color: var(--primary-color);
-        }
-
-        .footer-text {
-            font-size: 0.9rem;
-            color: #555;
-        }
+        .footer-col h3 { font-size: 1.1rem; margin-bottom: 5px; color: var(--primary-color); }
+        .footer-text { font-size: 0.9rem; color: #555; }
         
         .contact-link {
             display: flex;
@@ -178,11 +228,7 @@
         }
         .contact-link:hover { color: var(--secondary-accent); }
         
-        .contact-icon {
-            width: 20px;
-            height: 20px;
-            fill: var(--accent-color);
-        }
+        .contact-icon { width: 20px; height: 20px; fill: var(--accent-color); }
 
         .copyright {
             text-align: center;
@@ -201,17 +247,25 @@
             <img src="img/logo-cabecalho.png" alt="Logo Dr. Pablo" class="logo-top">
             <span class="brand-name">Dr. Pablo Fernandez</span>
         </a>
-        <a href="https://wa.me/555189959436" target="_blank" class="btn" style="padding: 10px 25px; font-size: 0.9rem;">Agendar</a>
+
+        <nav class="nav-menu">
+            <a href="#sobre">Sobre</a>
+            <a href="#atuacao">Áreas de Atuação</a>
+            <a href="#faq">Perguntas Frequentes</a>
+            <a href="#contato">Contato</a>
+        </nav>
+
+        <a href="https://wa.me/555189959436" target="_blank" class="header-btn">Agendar</a>
     </header>
 
     <section class="hero">
         <div style="max-width: 800px; margin: 0 auto;">
-            <a href="https://wa.me/555189959436" class="btn" target="_blank">Agendar Consulta Online</a>
+            <a href="https://wa.me/555189959436" class="hero-btn" target="_blank">Agendar Consulta Online</a>
         </div>
     </section>
 
     <div class="container">
-        <section class="about-section">
+        <section id="sobre" class="about-section">
             <div>
                 <img src="img/pablo-perfil.png" alt="Dr. Pablo Fernandez - Psiquiatra" class="profile-img">
             </div>
@@ -225,24 +279,60 @@
             </div>
         </section>
 
-        <section style="margin-top: 100px;">
+        <section id="atuacao" class="services-section">
             <div style="text-align: center; margin-bottom: 50px;">
-                <h2>Áreas de Atenção</h2>
-                <p>Suporte completo para os desafios do desenvolvimento.</p>
+                <h2>Áreas de Atuação</h2>
+                <p>Suporte completo para os desafios do desenvolvimento e da vida adulta.</p>
             </div>
             
             <div class="services-grid">
                 <div class="service-card">
                     <h3>TDAH</h3>
-                    <p>Avaliação diagnóstica rigorosa e tratamento multimodal para o Transtorno de Déficit de Atenção e Hiperatividade.</p>
+                    <p>Avaliação diagnóstica rigorosa e tratamento multimodal para o Transtorno de Déficit de Atenção e Hiperatividade em crianças e adultos.</p>
                 </div>
                 <div class="service-card">
                     <h3>Autismo (TEA)</h3>
-                    <p>Acompanhamento longitudinal focado na promoção de autonomia, intervenções comportamentais e suporte à família.</p>
+                    <p>Acompanhamento longitudinal focado na promoção de autonomia, desenvolvimento de habilidades sociais e suporte à família.</p>
                 </div>
                 <div class="service-card" style="border-top-color: var(--accent-color);">
-                    <h3>Ansiedade e Humor</h3>
-                    <p>Manejo de quadros ansiosos, depressivos e oscilações de humor que impactam a qualidade de vida.</p>
+                    <h3>Ansiedade e Depressão</h3>
+                    <p>Tratamento de quadros ansiosos, depressivos e alterações de humor que impactam o bem-estar e a funcionalidade.</p>
+                </div>
+                <div class="service-card" style="border-top-color: var(--accent-color);">
+                    <h3>TOD</h3>
+                    <p>Manejo do Transtorno Opositor Desafiador com estratégias comportamentais e forte orientação parental.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Transtorno Bipolar</h3>
+                    <p>Estabilização do humor e prevenção de crises, visando a qualidade de vida e o equilíbrio emocional.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Transtornos de Personalidade</h3>
+                    <p>Avaliação e acompanhamento terapêutico para padrões comportamentais persistentes e dificuldades interpessoais.</p>
+                </div>
+            </div>
+
+            <p class="services-disclaimer">
+                * Os tópicos acima representam algumas das principais áreas de atuação. O atendimento psiquiátrico abrange diversas outras demandas da saúde mental.
+            </p>
+        </section>
+
+        <section id="faq" class="faq-section">
+            <div style="text-align: center; margin-bottom: 40px;">
+                <h2>Perguntas Frequentes</h2>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <span class="faq-question">Atende convênios?</span>
+                    <p>Atualmente os atendimentos são realizados de forma particular, mas fornecemos recibo para solicitação de reembolso junto ao seu plano de saúde.</p>
+                </div>
+                <div class="faq-item">
+                    <span class="faq-question">Como funciona a Telemedicina?</span>
+                    <p>A consulta online ocorre por videochamada através de plataforma segura, com a mesma qualidade e rigor técnico da consulta presencial, incluindo emissão de receitas digitais.</p>
+                </div>
+                <div class="faq-item">
+                    <span class="faq-question">Qual a duração da consulta?</span>
+                    <p>A primeira consulta tem duração estendida para uma avaliação completa da história clínica e do desenvolvimento.</p>
                 </div>
             </div>
         </section>
@@ -297,5 +387,6 @@
 
 </body>
 </html>
+
 
 
