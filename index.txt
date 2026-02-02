@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Pablo Fernandez - Psiquiatria da Infância e Adolescência</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; color: #333; line-height: 1.6; }
+        header { background: #1a2a3a; color: white; padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; }
+        .hero { background: #f4f7f6; padding: 60px 5%; text-align: center; }
+        .container { padding: 40px 5%; max-width: 900px; margin: auto; }
+        h1 { color: #1a2a3a; margin-bottom: 10px; }
+        .btn-whatsapp { background: #25d366; color: white; padding: 15px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block; margin-top: 20px; }
+        .section-title { border-bottom: 2px solid #1a2a3a; display: inline-block; margin-bottom: 20px; }
+        footer { background: #f4f7f6; text-align: center; padding: 20px; font-size: 0.9em; border-top: 1px solid #ddd; }
+    </style>
+</head>
+<body>
+
+<header>
+    <strong>Dr. Pablo Fernandez</strong>
+</header>
+
+<section class="hero">
+    <h1>Psiquiatria da Infância e Adolescência</h1>
+    <p>Cuidado especializado e acolhimento para o desenvolvimento emocional de crianças e adolescentes.</p>
+    <a href="SEU_LINK_DO_WHATSAPP_AQUI" class="btn-whatsapp" target="_blank">Agendar Consulta via WhatsApp</a>
+</section>
+
+<div class="container">
+    <h2 class="section-title">Sobre</h2>
+    <p>O Dr. Pablo Fernandez é médico psiquiatra dedicado ao atendimento de crianças e adolescentes, focando em diagnósticos precisos e tratamentos humanizados que consideram o contexto familiar e escolar.</p>
+    
+    <h2 class="section-title">Atuação</h2>
+    <ul>
+        <li>Transtorno do Espectro Autista (TEA)</li>
+        <li>TDAH (Transtorno de Déficit de Atenção e Hiperatividade)</li>
+        <li>Transtornos de Ansiedade e Humor</li>
+        <li>Dificuldades de Aprendizado e Comportamento</li>
+    </ul>
+</div>
+
+<footer>
+    <p>Dr. Pablo Fernandez - Médico Psiquiatra</p>
+    <p>CRM XXX.XXX | RQE XXX.XXX</p>
+    <p>&copy; 2026 - Todos os direitos reservados.</p>
+</footer>
+
+</body>
+</html>
