@@ -70,12 +70,11 @@
         }
         .nav-menu a:hover { color: var(--accent-color); }
         
-        /* Mostra o menu apenas em telas maiores */
         @media(min-width: 900px) {
             .nav-menu { display: flex; }
         }
 
-        /* Botão Agendar (ajustado para mobile) */
+        /* Botão Header Mobile */
         .header-btn {
             background-color: var(--accent-color);
             color: var(--primary-color);
@@ -88,19 +87,47 @@
         }
         .header-btn:hover { background-color: var(--bg-color); transform: translateY(-2px); }
 
-        /* --- Hero Section (Banner) --- */
+        /* --- Hero Section (Novo Banner Responsivo) --- */
         .hero { 
             text-align: center; 
-            /* Mantendo o ajuste de 420px conforme a última versão */
-            padding: 420px 20px 60px; 
+            /* Flexbox para centralizar o texto perfeitamente */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            
+            /* Altura mínima para garantir que o banner apareça bem */
+            min-height: 600px;
+            padding: 20px;
+            
             background-color: var(--bg-color);
+            /* Certifique-se da extensão (png ou jpg) no seu github */
             background-image: url('img/banner-vintage.png');
-            background-position: center top;
+            background-position: center;
             background-repeat: no-repeat;
             background-size: cover; 
             position: relative;
         }
 
+        /* Estilo do Título Principal (Nome) */
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            color: #3b3026; /* Um tom marrom café escuro para combinar com o vintage */
+            text-shadow: 0 1px 2px rgba(255,255,255,0.5); /* Leve sombra para leitura */
+        }
+
+        /* Estilo dos Subtítulos (Especialidades) */
+        .hero h2 {
+            font-size: 1.5rem;
+            font-weight: 400; /* Mais leve */
+            font-family: 'Merriweather', serif;
+            color: #3b3026;
+            margin-bottom: 5px;
+            line-height: 1.4;
+        }
+
+        /* Botão do Banner */
         .hero-btn { 
             background-color: var(--accent-color); 
             color: var(--primary-color); 
@@ -112,8 +139,16 @@
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(217, 165, 91, 0.4);
             font-size: 1.1rem;
+            margin-top: 30px; /* Espaço acima do botão */
         }
         .hero-btn:hover { background-color: var(--white); transform: translateY(-2px); }
+
+        /* Ajustes para Celular (Responsividade) */
+        @media (max-width: 768px) {
+            .hero { min-height: 500px; } /* Banner um pouco menor no celular */
+            .hero h1 { font-size: 2.2rem; } /* Nome menor para não quebrar feio */
+            .hero h2 { font-size: 1.1rem; } /* Especialidades menores */
+        }
 
         .container { max-width: 1200px; margin: 0 auto; padding: 80px 20px; }
 
@@ -150,7 +185,6 @@
         .service-card:hover { transform: translateY(-5px); }
         .service-card h3 { font-size: 1.3rem; margin-bottom: 15px; }
         
-        /* Aviso abaixo dos cards */
         .services-disclaimer {
             text-align: center;
             margin-top: 40px;
@@ -162,7 +196,7 @@
             margin-right: auto;
         }
 
-        /* --- FAQ (Perguntas Frequentes) --- */
+        /* --- FAQ --- */
         .faq-section { margin-top: 100px; scroll-margin-top: 100px; }
         .faq-grid { display: grid; grid-template-columns: 1fr; gap: 20px; max-width: 900px; margin: 0 auto; }
         .faq-item {
@@ -173,7 +207,7 @@
         }
         .faq-question { font-weight: 700; color: var(--primary-color); margin-bottom: 10px; display: block; }
 
-        /* --- Rodapé Estruturado --- */
+        /* --- Rodapé --- */
         footer { 
             background: #F2EFE9; 
             padding: 60px 20px; 
@@ -230,7 +264,6 @@
             transition: color 0.3s;
         }
         .contact-link:hover { color: var(--secondary-accent); }
-        
         .contact-icon { width: 20px; height: 20px; fill: var(--accent-color); }
 
         .copyright {
@@ -263,6 +296,9 @@
 
     <section class="hero">
         <div style="max-width: 800px; margin: 0 auto;">
+            <h1>Dr. Pablo Fernandez</h1>
+            <h2>Psiquiatria Clínica</h2>
+            <h2>Psiquiatria da Infância e Adolescência</h2>
             <a href="https://wa.me/555189959436" class="hero-btn" target="_blank">Agendar Consulta Online</a>
         </div>
     </section>
@@ -307,11 +343,11 @@
                 </div>
                 <div class="service-card">
                     <h3>Autismo (TEA)</h3>
-                    <p>Avaliação diagnóstica criteriosa, baseada em critérios clínicos e evidências científicas, considerando o desenvolvimento global e o contexto familiar. Acompanhamento longitudinal e individualizado, com foco na promoção de autonomia, no desenvolvimento de habilidades socioemocionais e no suporte à família.</p>
+                    <p>Acompanhamento longitudinal focado na promoção de autonomia, desenvolvimento de habilidades sociais e suporte à família.</p>
                 </div>
                 <div class="service-card" style="border-top-color: var(--accent-color);">
                     <h3>Ansiedade e Depressão</h3>
-                    <p>Avaliação e tratamento de transtornos ansiosos, depressivos e alterações do humor que impactam o bem-estar e o funcionamento cotidiano. Abordagem centrada na compreensão da história do paciente e na construção de estratégias terapêuticas personalizadas, com intervenções farmacológicas e não farmacológicas quando indicadas.</p>
+                    <p>Tratamento de quadros ansiosos, depressivos e alterações de humor que impactam o bem-estar e a funcionalidade.</p>
                 </div>
                 <div class="service-card" style="border-top-color: var(--accent-color);">
                     <h3>TOD</h3>
@@ -434,5 +470,3 @@
 
 </body>
 </html>
-
-
