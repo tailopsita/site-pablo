@@ -3,8 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Pablo Fernandez | Psiquiatria Clínica e da Infância</title>
+    <title>Dr. Pablo Fernandez | Psiquiatria Clínica e da Infância e Adolescência</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
     <style>
         :root {
             --bg-color: #F9F6F0;
@@ -15,12 +19,22 @@
             --white: #FFFFFF;
         }
 
-        * { box-sizing: border-box; }
-        body { font-family: 'Montserrat', sans-serif; margin: 0; background-color: var(--bg-color); color: var(--text-color); line-height: 1.8; overflow-x: hidden; }
-        h1, h2, h3, h4 { font-family: 'Merriweather', serif; color: var(--primary-color); }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body { 
+            font-family: 'Montserrat', sans-serif; 
+            background-color: var(--bg-color); 
+            color: var(--text-color); 
+            line-height: 1.6; 
+        }
 
+        h1, h2, h3 { font-family: 'Merriweather', serif; color: var(--primary-color); }
+        
+        img { max-width: 100%; height: auto; display: block; }
+
+        /* --- Header --- */
         header { 
-            padding: 10px 5%; 
+            padding: 15px 5%; 
             display: flex; 
             justify-content: space-between; 
             align-items: center; 
@@ -28,123 +42,143 @@
             position: sticky; 
             top: 0; 
             z-index: 1000;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
         }
-        .header-brand { display: flex; align-items: center; text-decoration: none; }
-        .logo-top { height: 55px; width: auto; margin-right: 15px; }
-        .brand-name { font-family: 'Merriweather', serif; font-weight: 700; color: var(--primary-color); font-size: 1.2rem; }
+        
+        .header-brand { display: flex; align-items: center; text-decoration: none; gap: 15px; }
+        .logo-top { height: 50px; width: auto; }
+        .brand-name { font-family: 'Merriweather', serif; font-weight: 700; color: var(--primary-color); font-size: 1.1rem; }
 
+        /* --- Hero Section --- */
         .hero { 
             text-align: center; 
-            padding: 140px 10% 120px; 
-            /* CORRIGIDO: Agora aponta para .png como no seu GitHub */
-            background: url('img/banner-vintage.png') no-repeat center bottom; 
+            padding: 140px 20px 100px; 
+            background-color: var(--primary-color);
+            /* CAMINHO CORRIGIDO: Busca banner-vintage.png dentro da pasta img */
+            background-image: linear-gradient(rgba(42, 75, 90, 0.5), rgba(42, 75, 90, 0.5)), url('img/banner-vintage.png');
+            background-position: center bottom;
+            background-repeat: no-repeat;
             background-size: cover;
             color: white;
             position: relative;
         }
-        .hero::before { 
-            content: ""; 
-            position: absolute; 
-            top: 0; left: 0; width: 100%; height: 100%; 
-            background: rgba(42, 90, 100, 0.45); 
-            z-index: 1; 
-        }
-        .hero-content { position: relative; z-index: 2; max-width: 850px; margin: auto; }
-        .hero h1 { color: #FDFBF7; font-size: 2.8rem; margin-bottom: 20px; text-shadow: 0 2px 10px rgba(0,0,0,0.4); }
-        .hero p { font-size: 1.3rem; font-weight: 500; margin-bottom: 35px; color: #f0eada; }
 
+        .hero h1 { color: #FDFBF7; font-size: 2.5rem; margin-bottom: 20px; text-shadow: 0 2px 10px rgba(0,0,0,0.3); }
+        .hero p { font-size: 1.2rem; font-weight: 500; margin-bottom: 40px; color: #f0eada; }
+
+        /* --- Botão --- */
         .btn { 
             background-color: var(--accent-color); 
             color: var(--primary-color); 
-            padding: 18px 40px; 
+            padding: 16px 32px; 
             text-decoration: none; 
             border-radius: 50px; 
             font-weight: 700;
             display: inline-block;
-            transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            box-shadow: 0 5px 15px rgba(217, 165, 91, 0.4);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(217, 165, 91, 0.4);
         }
-        .btn:hover { transform: translateY(-4px); background-color: var(--white); }
+        .btn:hover { background-color: var(--white); transform: translateY(-2px); }
 
-        .container { max-width: 1100px; margin: auto; padding: 80px 20px; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 80px 20px; }
 
-        .about-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 60px; align-items: center; }
+        /* --- Sobre --- */
+        .about-section { display: grid; grid-template-columns: 1fr; gap: 40px; align-items: center; }
+        @media(min-width: 768px) { .about-section { grid-template-columns: 400px 1fr; gap: 80px; } }
+
         .profile-img { 
             width: 100%; 
-            max-width: 420px; 
-            border-radius: 15px; 
+            border-radius: 12px; 
             border: 4px solid var(--white);
-            box-shadow: 20px 20px 0px var(--accent-color);
+            box-shadow: 15px 15px 0px var(--accent-color);
         }
 
-        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 50px; }
+        /* --- Serviços --- */
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 60px; }
         .service-card { 
             background: var(--white); 
             padding: 40px; 
-            border-radius: 20px; 
-            border-top: 6px solid var(--secondary-accent);
-            box-shadow: 0 8px 25px rgba(42, 75, 90, 0.05);
+            border-radius: 16px; 
+            border-top: 5px solid var(--secondary-accent);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
         }
+        .service-card:hover { transform: translateY(-5px); }
 
-        footer { background: #1A2E38; color: #F9F6F0; padding: 80px 5% 40px; text-align: center; }
-        .footer-logo { height: 90px; margin-bottom: 25px; }
-        .footer-social a { color: var(--accent-color); text-decoration: none; margin: 0 15px; font-weight: 700; }
+        footer { background: #1A2E38; color: #F9F6F0; padding: 60px 20px; text-align: center; }
+        .footer-logo { height: 80px; width: auto; margin-bottom: 20px; }
+        .footer-links a { color: var(--accent-color); margin: 0 10px; text-decoration: none; font-weight: 600; }
     </style>
 </head>
 <body>
 
-<header>
-    <a href="#" class="header-brand">
-        <img src="img/logo-cabecalho.png" alt="Dr. Pablo Fernandez" class="logo-top">
-        <span class="brand-name">Dr. Pablo Fernandez</span>
-    </a>
-    <a href="https://wa.me/555189959436" target="_blank" class="btn" style="padding: 10px 25px; font-size: 0.85rem; box-shadow: none;">Agendar</a>
-</header>
+    <header>
+        <a href="#" class="header-brand">
+            <img src="img/logo-cabecalho.png" alt="Logo Dr. Pablo" class="logo-top">
+            <span class="brand-name">Dr. Pablo Fernandez</span>
+        </a>
+        <a href="https://wa.me/555189959436" target="_blank" class="btn" style="padding: 10px 25px; font-size: 0.9rem;">Agendar</a>
+    </header>
 
-<section class="hero">
-    <div class="hero-content">
-        <h1>Cuidado Especializado, Futuro Brilhante</h1>
-        <p>Psiquiatria da Infância e Adolescência focada no desenvolvimento saudável.</p>
-        <a href="https://wa.me/555189959436" class="btn" target="_blank">Agendar Consulta</a>
-    </div>
-</section>
-
-<div class="container">
-    <section class="about-grid">
-        <div class="profile-frame">
-            <img src="img/pablo-perfil.png" alt="Dr. Pablo Fernandez" class="profile-img">
-        </div>
-        <div>
-            <h4 style="color: var(--accent-color); text-transform: uppercase; letter-spacing: 2px; font-weight: 700;">Conheça o Especialista</h4>
-            <h2 style="font-size: 2.2rem; margin-top: 0;">Dr. Pablo Fernandez</h2>
-            <p>Médico especializado no cuidado da saúde mental de crianças e adolescentes. Sua atuação é pautada pelo acolhimento humanizado, buscando compreender a singularidade de cada jovem.</p>
-            <p style="font-weight: 600; color: var(--primary-color);">CREMERS 47214 | RQE 45908</p>
+    <section class="hero">
+        <div style="max-width: 800px; margin: 0 auto;">
+            <h1>Cuidado Especializado,<br>Futuro Brilhante</h1>
+            <p>Psiquiatria da Infância e Adolescência focada no desenvolvimento saudável e acolhimento familiar.</p>
+            <a href="https://wa.me/555189959436" class="btn" target="_blank">Agendar Consulta Online</a>
         </div>
     </section>
 
-    <section style="margin-top: 100px; text-align: center;">
-        <div class="services-grid">
-            <div class="service-card"><h3>TDAH</h3><p>Diagnóstico e manejo clínico especializado.</p></div>
-            <div class="service-card"><h3>TEA (Autismo)</h3><p>Suporte para autonomia e desenvolvimento.</p></div>
-            <div class="service-card" style="border-top-color: var(--accent-color);"><h3>Ansiedade</h3><p>Cuidado emocional para o bem-estar diário.</p></div>
-        </div>
-    </section>
-</div>
+    <div class="container">
+        <section class="about-section">
+            <div>
+                <img src="img/pablo-perfil.png" alt="Dr. Pablo Fernandez - Psiquiatra" class="profile-img">
+            </div>
+            <div>
+                <h4 style="color: var(--accent-color); text-transform: uppercase; letter-spacing: 1px; font-weight: 700; margin-bottom: 10px;">Especialista</h4>
+                <h2 style="font-size: 2.5rem; margin-top: 0; margin-bottom: 20px;">Dr. Pablo Fernandez</h2>
+                <p style="margin-bottom: 20px;">Médico especializado no cuidado da saúde mental de crianças e adolescentes. Sua atuação é pautada pelo acolhimento humanizado, aliando a precisão técnica da medicina baseada em evidências com a sensibilidade necessária para tratar os desafios do desenvolvimento.</p>
+                <div style="background: #eef4f6; padding: 15px; border-radius: 8px; display: inline-block; color: var(--primary-color); font-weight: 700;">
+                    CREMERS 47214 | RQE 45908
+                </div>
+            </div>
+        </section>
 
-<footer>
-    <img src="img/logo-cabecalho.png" alt="Psiquiatria Pablo Fernandez" class="footer-logo">
-    <div class="footer-info">
-        <p><strong>Dr. Pablo Fernandez</strong></p>
-        <p>Psiquiatria Clínica</p>
-        <p>Psiquiatria da Infância e Adolescência</p>
-        <p>CREMERS 47214 | RQE 45908</p>
+        <section style="margin-top: 100px;">
+            <div style="text-align: center; margin-bottom: 50px;">
+                <h2>Áreas de Atenção</h2>
+                <p>Suporte completo para os desafios do desenvolvimento.</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>TDAH</h3>
+                    <p>Avaliação diagnóstica rigorosa e tratamento multimodal para o Transtorno de Déficit de Atenção e Hiperatividade.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Autismo (TEA)</h3>
+                    <p>Acompanhamento longitudinal focado na promoção de autonomia, intervenções comportamentais e suporte à família.</p>
+                </div>
+                <div class="service-card" style="border-top-color: var(--accent-color);">
+                    <h3>Ansiedade e Humor</h3>
+                    <p>Manejo de quadros ansiosos, depressivos e oscilações de humor que impactam a qualidade de vida.</p>
+                </div>
+            </div>
+        </section>
     </div>
-    <div class="footer-social">
-        <a href="https://www.instagram.com/pablofernandez.psiq/" target="_blank">Instagram</a>
-        <a href="https://wa.me/555189959436" target="_blank">WhatsApp</a>
-    </div>
-</footer>
+
+    <footer>
+        <img src="img/logo-cabecalho.png" alt="Logo Rodapé" class="footer-logo">
+        <div style="margin-bottom: 30px;">
+            <p style="font-size: 1.1rem; font-weight: 700; margin-bottom: 5px;">Dr. Pablo Fernandez</p>
+             <p>Psiquiatria Clínica</p>
+            <p>Psiquiatria da Infância e Adolescência</p>
+        </div>
+        <div class="footer-links">
+            <a href="https://www.instagram.com/pablofernandez.psiq/" target="_blank">Instagram</a>
+            <a href="https://wa.me/555189959436" target="_blank">WhatsApp</a>
+        </div>
+        <p style="margin-top: 40px; font-size: 0.85rem; opacity: 0.6;">&copy; 2026 Dr. Pablo Fernandez. Todos os direitos reservados.</p>
+    </footer>
 
 </body>
 </html>
