@@ -9,7 +9,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,300;1,400;1,700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
         :root {
@@ -20,6 +20,8 @@
             --text-color: #3D4043;
             --white: #FFFFFF;
             --border-color: #E0D8C3;
+            /* Nova cor para o texto do banner: Marrom Café Escuro */
+            --banner-text-color: #3E2F28;
         }
 
         /* Rolagem suave para navegação */
@@ -58,7 +60,6 @@
         .logo-top { height: 45px; width: auto; }
         .brand-name { font-family: 'Merriweather', serif; font-weight: 700; color: var(--primary-color); font-size: 1rem; }
 
-        /* Menu de Navegação */
         .nav-menu { display: none; gap: 20px; }
         .nav-menu a {
             text-decoration: none;
@@ -74,7 +75,6 @@
             .nav-menu { display: flex; }
         }
 
-        /* Botão Header Mobile */
         .header-btn {
             background-color: var(--accent-color);
             color: var(--primary-color);
@@ -87,47 +87,52 @@
         }
         .header-btn:hover { background-color: var(--bg-color); transform: translateY(-2px); }
 
-        /* --- Hero Section (Novo Banner Responsivo) --- */
+        /* --- Hero Section (Banner Responsivo CORRIGIDO) --- */
         .hero { 
             text-align: center; 
-            /* Flexbox para centralizar o texto perfeitamente */
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             
-            /* Altura mínima para garantir que o banner apareça bem */
-            min-height: 600px;
-            padding: 20px;
+            /* AJUSTE: Altura mínima reduzida para 450px para ser mais sutil */
+            min-height: 450px;
+            padding: 40px 20px;
             
-            background-color: var(--bg-color);
-            /* Certifique-se da extensão (png ou jpg) no seu github */
+            /* Cor de fundo de segurança caso a imagem não carregue */
+            background-color: #F2EFE9; 
             background-image: url('img/banner-vintage.png');
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover; 
             position: relative;
+            border-bottom: 3px solid var(--border-color); /* Acabamento sutil na borda inferior */
         }
 
-        /* Estilo do Título Principal (Nome) */
+        /* Estilo do Nome Principal */
         .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 10px;
-            color: #3b3026; /* Um tom marrom café escuro para combinar com o vintage */
-            text-shadow: 0 1px 2px rgba(255,255,255,0.5); /* Leve sombra para leitura */
+            font-family: 'Merriweather', serif;
+            font-weight: 900; /* Bem negrito */
+            font-size: 3rem;
+            margin-bottom: 15px;
+            /* COR ESCURA PARA CONTRASTE */
+            color: var(--banner-text-color); 
+            /* Sombra branca suave para garantir leitura em qualquer fundo claro */
+            text-shadow: 1px 1px 3px rgba(255,255,255,0.8);
         }
 
-        /* Estilo dos Subtítulos (Especialidades) */
+        /* Estilo das Especialidades */
         .hero h2 {
-            font-size: 1.5rem;
-            font-weight: 400; /* Mais leve */
             font-family: 'Merriweather', serif;
-            color: #3b3026;
+            font-weight: 400;
+            font-style: italic; /* Itálico para elegância */
+            font-size: 1.3rem;
+            /* Cor escura, ligeiramente mais suave que o título */
+            color: #5D4E46; 
             margin-bottom: 5px;
             line-height: 1.4;
         }
 
-        /* Botão do Banner */
         .hero-btn { 
             background-color: var(--accent-color); 
             color: var(--primary-color); 
@@ -139,15 +144,16 @@
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(217, 165, 91, 0.4);
             font-size: 1.1rem;
-            margin-top: 30px; /* Espaço acima do botão */
+            margin-top: 35px; /* Espaço acima do botão */
         }
         .hero-btn:hover { background-color: var(--white); transform: translateY(-2px); }
 
-        /* Ajustes para Celular (Responsividade) */
+        /* Ajustes para Celular */
         @media (max-width: 768px) {
-            .hero { min-height: 500px; } /* Banner um pouco menor no celular */
-            .hero h1 { font-size: 2.2rem; } /* Nome menor para não quebrar feio */
-            .hero h2 { font-size: 1.1rem; } /* Especialidades menores */
+            .hero { min-height: 400px; padding: 30px 15px; }
+            .hero h1 { font-size: 2rem; }
+            .hero h2 { font-size: 1.1rem; }
+            .hero-btn { padding: 12px 24px; font-size: 1rem; }
         }
 
         .container { max-width: 1200px; margin: 0 auto; padding: 80px 20px; }
@@ -412,6 +418,10 @@
                 <div class="faq-item">
                     <span class="faq-question">Como é o atendimento para crianças e adolescentes?</span>
                     <p>O foco é uma avaliação cuidadosa do desenvolvimento, aspectos familiares e escolares. A consulta inicial pode envolver momentos com os pais e com o paciente, juntos ou separadamente, dependendo da idade e da necessidade clínica.</p>
+                </div>
+                <div class="faq-item">
+                    <span class="faq-question">Como funciona o sigilo médico no atendimento de adolescentes?</span>
+                    <p>O sigilo é fundamental para o sucesso do tratamento. Os responsáveis são informados sobre as diretrizes e ajustes terapêuticos, mas o espaço de fala individual do adolescente é preservado. O sigilo só é quebrado em situações de risco à integridade do paciente ou de terceiros.</p>
                 </div>
                 <div class="faq-item">
                     <span class="faq-question">Há contato com a escola ou outros profissionais da criança?</span>
