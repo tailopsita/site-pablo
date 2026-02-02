@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Dr. Pablo Fernandez | Psiquiatra</title>
+    
+    <meta name="description" content="Psiquiatra em Porto Alegre e Online. Especialista em TDAH, Autismo e Saúde Mental da Infância e Adolescência. Agende sua consulta.">
     
     <link rel="icon" type="image/png" href="img/favicon.png">
 
@@ -20,7 +23,7 @@
             --text-color: #3D4043;
             --white: #FFFFFF;
             --border-color: #E0D8C3;
-            /* Nova cor para o texto do banner: Marrom Café Escuro */
+            /* Cor do texto do banner: Marrom Café Escuro para contraste */
             --banner-text-color: #3E2F28;
         }
 
@@ -87,7 +90,7 @@
         }
         .header-btn:hover { background-color: var(--bg-color); transform: translateY(-2px); }
 
-        /* --- Hero Section (Banner Responsivo CORRIGIDO) --- */
+        /* --- Hero Section (Banner Responsivo) --- */
         .hero { 
             text-align: center; 
             display: flex;
@@ -95,29 +98,28 @@
             justify-content: center;
             align-items: center;
             
-            /* AJUSTE: Altura mínima reduzida para 450px para ser mais sutil */
+            /* Altura controlada para ser sutil */
             min-height: 450px;
             padding: 40px 20px;
             
-            /* Cor de fundo de segurança caso a imagem não carregue */
+            /* Cor de fundo de segurança */
             background-color: #F2EFE9; 
-            background-image: url('img/banner-vintage.png');
+            /* Importante: Mantive .jpg conforme ajustamos antes */
+            background-image: url('img/banner-vintage.jpg');
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover; 
             position: relative;
-            border-bottom: 3px solid var(--border-color); /* Acabamento sutil na borda inferior */
+            border-bottom: 3px solid var(--border-color);
         }
 
         /* Estilo do Nome Principal */
         .hero h1 {
             font-family: 'Merriweather', serif;
-            font-weight: 900; /* Bem negrito */
+            font-weight: 900; 
             font-size: 3rem;
             margin-bottom: 15px;
-            /* COR ESCURA PARA CONTRASTE */
             color: var(--banner-text-color); 
-            /* Sombra branca suave para garantir leitura em qualquer fundo claro */
             text-shadow: 1px 1px 3px rgba(255,255,255,0.8);
         }
 
@@ -125,9 +127,8 @@
         .hero h2 {
             font-family: 'Merriweather', serif;
             font-weight: 400;
-            font-style: italic; /* Itálico para elegância */
+            font-style: italic; 
             font-size: 1.3rem;
-            /* Cor escura, ligeiramente mais suave que o título */
             color: #5D4E46; 
             margin-bottom: 5px;
             line-height: 1.4;
@@ -144,7 +145,7 @@
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(217, 165, 91, 0.4);
             font-size: 1.1rem;
-            margin-top: 35px; /* Espaço acima do botão */
+            margin-top: 35px;
         }
         .hero-btn:hover { background-color: var(--white); transform: translateY(-2px); }
 
@@ -349,11 +350,11 @@
                 </div>
                 <div class="service-card">
                     <h3>Autismo (TEA)</h3>
-                    <p>Avaliação diagnóstica criteriosa, baseada em critérios clínicos e evidências científicas, considerando o desenvolvimento global e o contexto familiar. Acompanhamento longitudinal e individualizado, com foco na promoção de autonomia, no desenvolvimento de habilidades socioemocionais e no suporte à família.</p>
+                    <p>Acompanhamento longitudinal focado na promoção de autonomia, desenvolvimento de habilidades sociais e suporte à família.</p>
                 </div>
                 <div class="service-card" style="border-top-color: var(--accent-color);">
                     <h3>Ansiedade e Depressão</h3>
-                    <p>Avaliação e tratamento de transtornos ansiosos, depressivos e alterações do humor que impactam o bem-estar e o funcionamento cotidiano. Abordagem centrada na compreensão da história do paciente e na construção de estratégias terapêuticas personalizadas, com intervenções farmacológicas e não farmacológicas quando indicadas.</p>
+                    <p>Tratamento de quadros ansiosos, depressivos e alterações de humor que impactam o bem-estar e a funcionalidade.</p>
                 </div>
                 <div class="service-card" style="border-top-color: var(--accent-color);">
                     <h3>TOD</h3>
@@ -420,6 +421,10 @@
                     <p>O foco é uma avaliação cuidadosa do desenvolvimento, aspectos familiares e escolares. A consulta inicial pode envolver momentos com os pais e com o paciente, juntos ou separadamente, dependendo da idade e da necessidade clínica.</p>
                 </div>
                 <div class="faq-item">
+                    <span class="faq-question">Como funciona o sigilo médico no atendimento de adolescentes?</span>
+                    <p>O sigilo é fundamental para o sucesso do tratamento. Os responsáveis são informados sobre as diretrizes e ajustes terapêuticos, mas o espaço de fala individual do adolescente é preservado. O sigilo só é quebrado em situações de risco à integridade do paciente ou de terceiros.</p>
+                </div>
+                <div class="faq-item">
                     <span class="faq-question">Há contato com a escola ou outros profissionais da criança?</span>
                     <p>Sim, quando necessário, podem ser solicitadas informações escolares ou de outros profissionais que acompanham o paciente. Reuniões específicas com a escola ou equipe multidisciplinar podem ser agendadas como parte do acompanhamento.</p>
                 </div>
@@ -443,7 +448,7 @@
                 </a>
 
                 <a href="https://www.instagram.com/pablofernandez.psiq/" target="_blank" class="contact-link">
-                    <svg class="contact-icon" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    <svg class="contact-icon" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
                     Instagram
                 </a>
                 
@@ -476,6 +481,3 @@
 
 </body>
 </html>
-
-
-
