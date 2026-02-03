@@ -6,7 +6,7 @@
     
     <title>Dr. Pablo Fernandez | Psiquiatra</title>
     
-    <meta name="description" content="Atendimento para adultos, crianças e adolescentes em Porto Alegre, Pelotas e online para o mundo todo. Foco em diagnóstico e acompanhamento contínuo de condições como TDAH e TEA, com consultas detalhadas e cuidado individualizado.">
+    <meta name="description" content="Atuação em psiquiatria com abordagem humanizada e técnica. Realizo acompanhamento clínico completo para todas as fases da vida, priorizando a compreensão ampla do histórico do paciente e o monitoramento rigoroso de sintomas. Especialista em infância e adolescência, oferecendo um espaço seguro para o desenvolvimento emocional e comportamental.">
     
     <link rel="icon" type="image/png" href="img/favicon.png">
 
@@ -23,11 +23,9 @@
             --text-color: #3D4043;
             --white: #FFFFFF;
             --border-color: #E0D8C3;
-            /* Cor do texto do banner: Marrom Café Escuro para contraste */
             --banner-text-color: #3E2F28;
         }
 
-        /* Rolagem suave para navegação */
         html { scroll-behavior: smooth; }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -90,17 +88,15 @@
         }
         .header-btn:hover { background-color: var(--bg-color); transform: translateY(-2px); }
 
-        /* --- Hero Section (Banner) --- */
+        /* --- Hero Section --- */
         .hero { 
             text-align: center; 
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            
             min-height: 450px;
             padding: 40px 20px;
-            
             background-color: #F2EFE9; 
             background-image: url('img/banner-vintage.png');
             background-position: center;
@@ -119,7 +115,6 @@
             text-shadow: 1px 1px 3px rgba(255,255,255,0.8);
         }
 
-        /* Estilo das Especialidades */
         .hero h2 {
             font-family: 'Merriweather', serif;
             font-weight: 400;
@@ -145,7 +140,6 @@
         }
         .hero-btn:hover { background-color: var(--white); transform: translateY(-2px); }
 
-        /* Ajustes para Celular */
         @media (max-width: 768px) {
             .hero { min-height: 400px; padding: 30px 15px; }
             .hero h1 { font-size: 2rem; }
@@ -199,16 +193,77 @@
             margin-right: auto;
         }
 
-        /* --- FAQ --- */
+        /* --- FAQ (Estilo Accordion) --- */
         .faq-section { margin-top: 100px; scroll-margin-top: 100px; }
-        .faq-grid { display: grid; grid-template-columns: 1fr; gap: 20px; max-width: 900px; margin: 0 auto; }
+        .faq-grid { display: grid; grid-template-columns: 1fr; gap: 15px; max-width: 900px; margin: 0 auto; }
+        
+        /* Estilo da caixa que contém pergunta e resposta */
         .faq-item {
             background: var(--white);
-            padding: 25px;
             border-radius: 10px;
             border-left: 4px solid var(--accent-color);
+            overflow: hidden; /* Garante que o conteúdo fique dentro das bordas arredondadas */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
-        .faq-question { font-weight: 700; color: var(--primary-color); margin-bottom: 10px; display: block; }
+
+        /* Estilo do elemento clicável (Pergunta) */
+        summary {
+            padding: 20px 25px;
+            cursor: pointer;
+            font-weight: 700;
+            color: var(--primary-color);
+            font-family: 'Merriweather', serif;
+            font-size: 1.05rem;
+            list-style: none; /* Remove a seta padrão feia do navegador */
+            position: relative;
+            padding-right: 40px; /* Espaço para a seta customizada */
+            transition: background-color 0.3s;
+        }
+
+        summary:hover {
+            background-color: #fcfbf9;
+        }
+
+        /* Seta customizada */
+        summary::after {
+            content: '+'; 
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            font-weight: 300;
+            transition: transform 0.3s ease;
+        }
+
+        /* Efeito quando aberto */
+        details[open] summary::after {
+            transform: translateY(-50%) rotate(45deg); /* Vira um X */
+        }
+        
+        details[open] summary {
+            border-bottom: 1px solid #eee;
+        }
+
+        /* A resposta (texto escondido) */
+        .faq-answer {
+            padding: 20px 25px;
+            font-size: 0.95rem;
+            color: #555;
+            line-height: 1.7;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Remove seta padrão no Chrome/Safari */
+        summary::-webkit-details-marker {
+            display: none;
+        }
 
         /* --- Rodapé --- */
         footer { 
@@ -376,55 +431,101 @@
                 <h2>Perguntas Frequentes</h2>
             </div>
             <div class="faq-grid">
-                <div class="faq-item">
-                    <span class="faq-question">Onde os atendimentos são realizados?</span>
-                    <p>Os atendimentos presenciais ocorrem em Porto Alegre/RS e Pelotas/RS. Além disso, são realizados atendimentos online para pacientes de todo o Brasil.</p>
-                </div>
-                <div class="faq-item">
-                    <span class="faq-question">Como funcionam os atendimentos online?</span>
-                    <p>A consulta online ocorre por videochamada através de plataforma segura, com a mesma qualidade e rigor técnico da consulta presencial, incluindo emissão de receitas digitais.</p>
-                </div>
-                <div class="faq-item">
-                    <span class="faq-question">Quanto tempo dura cada consulta?</span>
-                    <p>A primeira consulta tem duração aproximada de 1 hora, sendo dedicada à compreensão do histórico e do quadro atual. As consultas subsequentes (acompanhamento) duram até 45 minutos.</p>
-                </div>
-                <div class="faq-item">
-                    <span class="faq-question">Existe consulta de retorno?</span>
-                    <p>No modelo de acompanhamento psiquiátrico adotado, cada encontro é uma consulta clínica completa, com avaliação e ajustes terapêuticos. Por isso, não trabalhamos com o formato de "retorno" gratuito; cada atendimento corresponde a uma nova consulta.</p>
-                </div>
-                <div class="faq-item">
-                <span class="faq-question">Quais são as regras para remarcações, atrasos e faltas?</span>
-                <p>Para garantir a qualidade e a pontualidade dos atendimentos, adotamos as seguintes diretrizes:</p>
-                <ul style="padding-left: 20px; margin-top: 10px;">
-                    <li style="margin-bottom: 10px;"><strong>Remarcações:</strong> Devem ser solicitadas com, no mínimo, 24 horas de antecedência.</li>
-                    <li style="margin-bottom: 10px;"><strong>Atrasos:</strong> Há uma tolerância de até 15 minutos. O tempo de atraso será descontado do tempo total da consulta. Após esse período, o paciente será considerado faltante.</li>
-                    <li><strong>Faltas:</strong> Em caso de não comparecimento, o valor integral da consulta será cobrado, exceto se a falta for justificada por motivo de força maior.</li>
-                </ul>
-                </div>
-                <div class="faq-item">
-                    <span class="faq-question">Atende convênios?</span>
-                    <p>Não. Os atendimentos são realizados exclusivamente de forma particular. Isso garante o tempo necessário para uma avaliação detalhada e um cuidado individualizado em cada consulta.</p>
-                </div>
-                <div class="faq-item">
-                    <span class="faq-question">É possível realizar avaliação para TDAH ou TEA (Autismo)?</span>
-                    <p>Sim. Realizamos avaliações psiquiátricas para investigação de condições do neurodesenvolvimento. O processo inclui análise clínica, entrevistas e, se necessário, o estudo de avaliações prévias.</p>
-                </div>
-                <div class="faq-item">
-                    <span class="faq-question">O diagnóstico e o laudo são garantidos na primeira consulta?</span>
-                    <p>Não. O diagnóstico e a eventual emissão de laudos são resultados de um processo de avaliação clínica. Não é possível garantir a emissão de documentos ou um diagnóstico específico antes da conclusão dessa análise.</p>
-                </div>
-                <div class="faq-item">
-                    <span class="faq-question">Como funciona a emissão de receitas e atestados?</span>
-                    <p>A emissão de documentos médicos é feita obrigatoriamente durante a consulta, como parte do acompanhamento. Em casos específicos e previamente combinados, pode ser emitida uma receita intermediária, desde que a próxima consulta já esteja agendada.</p>
-                </div>
-                <div class="faq-item">
-                    <span class="faq-question">Como é o atendimento para crianças e adolescentes?</span>
-                    <p>O foco é uma avaliação cuidadosa do desenvolvimento, aspectos familiares e escolares. A consulta inicial pode envolver momentos com os pais e com o paciente, juntos ou separadamente, dependendo da idade e da necessidade clínica.</p>
-                </div>
-                <div class="faq-item">
-                    <span class="faq-question">Há contato com a escola ou outros profissionais da criança?</span>
-                    <p>Sim, quando necessário, podem ser solicitadas informações escolares ou de outros profissionais que acompanham o paciente. Reuniões específicas com a escola ou equipe multidisciplinar podem ser agendadas como parte do acompanhamento.</p>
-                </div>
+                
+                <details class="faq-item">
+                    <summary>Onde os atendimentos são realizados?</summary>
+                    <div class="faq-answer">
+                        Os atendimentos presenciais ocorrem em Porto Alegre/RS e Pelotas/RS. Além disso, são realizados atendimentos online para pacientes de todo o Brasil.
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Como funcionam os atendimentos online?</summary>
+                    <div class="faq-answer">
+                        A consulta online ocorre por videochamada através de plataforma segura, com a mesma qualidade e rigor técnico da consulta presencial, incluindo emissão de receitas digitais.
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Quanto tempo dura cada consulta?</summary>
+                    <div class="faq-answer">
+                        A primeira consulta tem duração aproximada de 1 hora, sendo dedicada à compreensão do histórico e do quadro atual. As consultas subsequentes (acompanhamento) duram até 45 minutos.
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Existe consulta de retorno?</summary>
+                    <div class="faq-answer">
+                        No modelo de acompanhamento psiquiátrico adotado, cada encontro é uma consulta clínica completa, com avaliação e ajustes terapêuticos. Por isso, não trabalhamos com o formato de "retorno" gratuito; cada atendimento corresponde a uma nova consulta.
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Quais são as regras para remarcações, atrasos e faltas?</summary>
+                    <div class="faq-answer">
+                        <p>Para garantir a qualidade e a pontualidade dos atendimentos, adotamos as seguintes diretrizes:</p>
+                        <ul style="padding-left: 20px; margin-top: 10px;">
+                            <li style="margin-bottom: 10px;"><strong>Remarcações:</strong> Devem ser solicitadas com, no mínimo, 24 horas de antecedência.</li>
+                            <li style="margin-bottom: 10px;"><strong>Atrasos:</strong> Há uma tolerância de até 15 minutos. O tempo de atraso será descontado do tempo total da consulta. Após esse período, o paciente será considerado faltante.</li>
+                            <li><strong>Faltas:</strong> Em caso de não comparecimento, o valor integral da consulta será cobrado, exceto se a falta for justificada por motivo de força maior.</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Atende convênios?</summary>
+                    <div class="faq-answer">
+                        Não, os atendimentos são realizados exclusivamente de forma particular. No entanto, fornecemos toda a documentação necessária (como recibos e notas fiscais) para que você possa solicitar o reembolso junto ao seu convênio, caso o seu plano ofereça essa modalidade. Recomendamos que você entre em contato com sua operadora de saúde previamente para verificar as condições e os valores de reembolso previstos em seu contrato.
+                </details>
+
+                <details class="faq-item">
+                    <summary>É possível realizar avaliação para TDAH ou TEA (Autismo)?</summary>
+                    <div class="faq-answer">
+                        Sim. Realizamos avaliações psiquiátricas para investigação de condições do neurodesenvolvimento. O processo inclui análise clínica, entrevistas e, se necessário, o estudo de avaliações prévias.
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>O diagnóstico e o laudo são garantidos na primeira consulta?</summary>
+                    <div class="faq-answer">
+                        Não. O diagnóstico e a eventual emissão de laudos são resultados de um processo de avaliação clínica. Não é possível garantir a emissão de documentos ou um diagnóstico específico antes da conclusão dessa análise.
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Como funciona a emissão de receitas e atestados?</summary>
+                    <div class="faq-answer">
+                        Documentos médicos são emitidos exclusivamente durante a consulta, mediante análise clínica. A emissão depende da avaliação técnica da necessidade de cada caso.
+                </details>
+
+                <details class="faq-item">
+                    <summary>Como é o atendimento para crianças e adolescentes?</summary>
+                    <div class="faq-answer">
+                        O foco é uma avaliação cuidadosa do desenvolvimento, aspectos familiares e escolares. A consulta inicial pode envolver momentos com os pais e com o paciente, juntos ou separadamente, dependendo da idade e da necessidade clínica.
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Há contato com a escola ou outros profissionais da criança?</summary>
+                    <div class="faq-answer">
+                        Sim, quando necessário, podem ser solicitadas informações escolares ou de outros profissionais que acompanham o paciente. Reuniões específicas com a escola ou equipe multidisciplinar podem ser agendadas como parte do acompanhamento.
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Qual o público atendido?</summary>
+                    <div class="faq-answer">
+                        O atendimento abrange todas as faixas etárias - adultos, adolescentes e crianças. A formação em Psiquiatria Geral permite o acompanhamento de adultos, enquanto a especialização em Infância e Adolescência oferece um suporte focado nas necessidades específicas dessas fases do desenvolvimento.
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Há atendimento em domicílio?</summary>
+                    <div class="faq-answer">
+                        Sim, conforme disponibilidade. Favor entrar em contato para verificar a viabilidade logística e de horários para a sua região.
+                    </div>
+                </details>
+                
             </div>
         </section>
     </div>
@@ -478,7 +579,3 @@
 
 </body>
 </html>
-
-
-
-
